@@ -7,17 +7,17 @@ A fully functional Security Operations Centre home lab built to simulate real-wo
 
 ## Dashboard
 
-**Full Lab Setup** — Kali attacking, Windows forwarding logs, Ubuntu running Splunk, dashboard live
+**Full Lab Setup**: Kali attacking, Windows forwarding logs, Ubuntu running Splunk, dashboard live
 
 ![Full Lab](screenshots/full-lab.png)
 
-**Search & Reporting** — live SPL queries against 5,300+ indexed events
-
-![Search and Reporting](screenshots/search.png)
-
-**SOC Lab Dashboard** — failed logins, brute force detection, login timeline and event count by host
+**SOC Lab Dashboard**: failed logins, brute force detection, login timeline and event count by host
 
 ![SOC Dashboard](screenshots/dashboard.png)
+
+**Search & Reporting**: live SPL queries against 5,300+ indexed events
+
+![Search and Reporting](screenshots/search.png)
 
 
 ---
