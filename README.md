@@ -43,12 +43,12 @@ A fully functional Security Operations Centre home lab built to simulate real-wo
 
 | Module | Source | Description |
 |---|---|---|
-| Failed Login Detection | WinEventLog:Security | Detects EventCode 4625 — failed logon attempts grouped by account |
+| Failed Login Detection | WinEventLog:Security | Detects EventCode 4625 failed logon attempts grouped by account |
 | Brute Force Detection | WinEventLog:Security | Flags accounts with 5+ failures in a time window |
 | Port Scan Detection | WinEventLog:Security | High connection count from single IP indicates Nmap scanning |
 | Credential Stuffing | WinEventLog:Security | Accounts with multiple failures followed by a successful login |
 | Login Timeline | WinEventLog:Security | Timechart of failed vs successful logins over time |
-| Event Source Monitor | All indexes | Event count by host — detects silent sources or log gaps |
+| Event Source Monitor | All indexes | Event count by host detects silent sources or log gaps |
 
 ---
 
@@ -160,18 +160,10 @@ soc-home-lab/
 ### Setup Order
 ```bash
 # 1. Create NAT Network in VirtualBox
-#    File → Tools → Network Manager → NAT Networks → Create
-#    Name: SIEMLab | Subnet: 10.0.0.0/24 | Enable DHCP
 
 # 2. Start Ubuntu VM → install Splunk
-sudo dpkg -i splunk.deb
-sudo /opt/splunk/bin/splunk start --accept-license --run-as-root
-sudo /opt/splunk/bin/splunk enable listen 9997 --run-as-root
 
 # 3. Install Universal Forwarder on Windows 10
-#    Download MSI from splunk.com
-#    Set receiving indexer: 10.0.0.10:9997
-#    Enable: Security, System, Application event logs
 
 # 4. Start Kali and run attacks
 nmap -sV -A 10.0.0.20
